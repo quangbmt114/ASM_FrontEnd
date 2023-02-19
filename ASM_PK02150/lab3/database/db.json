@@ -587,44 +587,16 @@
       "id": "1"
     },
     {
-      "email": "ex1@gmail.com",
-      "username": "example1",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "role": "user",
-      "id": "U5X_0Wk"
-    },
-    {
-      "email": "users1@gmail.com",
-      "username": "users1",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "role": "user",
-      "id": "yYFlWZO"
-    },
-    {
-      "email": "ex2@gmail.com",
-      "username": "users2",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "role": "user",
-      "id": "rPIu27u"
+      "email": "quangbmt1b@gmail.com1111",
+      "username": "quang1112221",
+      "id": "5CMOBDM"
     },
     {
       "email": "quangbmt1b@gmail.com",
       "username": "quang",
-      "password": "123456",
-      "confirmPassword": "123456",
-      "role": "user",
-      "id": "kv57CzP"
-    },
-    {
-      "email": "quang111@gmail.com",
-      "username": "quangbmt",
-      "password": "abc123",
-      "confirmPassword": "abc123",
-      "role": "user",
-      "id": "5CMOBDM"
+      "password": "123123123",
+      "confirmPassword": "123123123",
+      "id": "WjwAj2a"
     }
   ]
 }

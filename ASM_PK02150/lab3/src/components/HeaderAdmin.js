@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import { Navbar } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Home_page from "../../src/components/images/home-32px.png"
-import Contact from "./images/chat-32px.png"
+import ManagePost from "./images/Manage_file-32px.png"
+import  "./headerAdmin.css"
 import {
   faSignIn,
   faSignOut,
@@ -15,6 +15,7 @@ const HeaderAdmin = ({ auth }) => {
   const renderLogout = () => {
     return (
       <div className="buttons">
+     <div className="managePost"><Link to="/adminApp"><img  src={ManagePost}/> Manage Post</Link></div>
         <a
           href="/"
           onClick={logOut}

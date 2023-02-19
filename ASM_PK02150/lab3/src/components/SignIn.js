@@ -63,7 +63,8 @@ function SignIn() {
           <Button variant="primary" type="submit">
             Sign In
           </Button>
-          <p className="mt-3" style={{textAlign:"center"}} >Don't Have an Account ? <span><Link to="/signUp"> Sign up</Link></span></p>
+          <p className="mt-3" style={{textAlign:"center",marginTop:0}} >Don't Have an Account ? <span><Link to="/signUp"> Sign up</Link></span></p>
+          <p className="mt-3" style={{textAlign:"center",marginTop:0}} >You don't sign in with your Account <span><Link to="/resetpassword"> Reset Password</Link></span></p>
         </Form>
       </Col>
     </div>

@@ -10,6 +10,8 @@ import Cart from "./components/Cart.js";
 import UserApp from "./components/UserApp";
 import PostDetailAd from "./components/DetailPostAd.js";
 import Checkout from "./components/CheckOut";
+import ResetPassword from "./components/ResetPassword.js";
+import ChangePassword from "./components/ChangePassword.js";
 import { Navigate } from "react-router-dom";
 
 const RouteList = () => {
@@ -21,6 +23,8 @@ const RouteList = () => {
     { path: "/contact", element: <LayoutDefault><h1>Liên hệ</h1></LayoutDefault> },
     { path: "/signIn", element:<LayoutDefault><SignIn /></LayoutDefault> },
     { path: "/signUp", element: <LayoutDefault><Signup /></LayoutDefault> },
+    { path: "/resetpassword", element: <LayoutDefault><ResetPassword /></LayoutDefault> },
+    { path: "/changepassword", element: <LayoutDefault><ChangePassword /></LayoutDefault> },
     { path: "/post/:id", element: <LayoutDefault><PostDetail /></LayoutDefault> },
     {
       path: "/posts/:id",
@@ -30,7 +34,7 @@ const RouteList = () => {
     isAuth ? <LayoutAdmin><AdminApp /> </LayoutAdmin>: <Navigate to="/signIn" />},
     {
       path: "/checkout",
-      element: isAuth ? <Checkout /> : <Navigate to="/signIn" />,
+      element: isAuth ? <LayoutDefault><Checkout /></LayoutDefault>  : <Navigate to="/signIn" />,
     },
     { path: "/cart", element: isAuth ? <LayoutDefault><Cart /></LayoutDefault> : <Navigate to="/signIn" /> },
     {
