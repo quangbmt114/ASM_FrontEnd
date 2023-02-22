@@ -20,6 +20,8 @@ const PostsAdmin = ({ posts, keyword, onReload }) => {
     const data = await axios.put(process.env.REACT_APP_API + `/posts/${id}`, post);
     if (data) {
       alert("Update Success");
+      onHandleUpdate()
+      setPost(data)
     }
   };
   const onHandleUpdate = async(id)=>{

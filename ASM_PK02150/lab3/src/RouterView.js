@@ -13,6 +13,9 @@ import Checkout from "./components/CheckOut";
 import ResetPassword from "./components/ResetPassword.js";
 import ChangePassword from "./components/ChangePassword.js";
 import { Navigate } from "react-router-dom";
+import HistoryCarts from "./components/HistoryCarts.js";
+import ManagerHistoryCarts from "./components/ManagerHistoryCarts";
+import ManagerDetailCart from "./components/ManagerDetailCart.js";
 
 const RouteList = () => {
   const isAuth = localStorage.getItem("user");
@@ -26,6 +29,9 @@ const RouteList = () => {
     { path: "/resetpassword", element: <LayoutDefault><ResetPassword /></LayoutDefault> },
     { path: "/changepassword", element: <LayoutDefault><ChangePassword /></LayoutDefault> },
     { path: "/post/:id", element: <LayoutDefault><PostDetail /></LayoutDefault> },
+    {path:"/historycarts",element:isAuth ?<LayoutDefault><HistoryCarts/></LayoutDefault>: <Navigate to="/signIn" /> },
+    {path:"/managerhistorycarts",element:<LayoutAdmin><ManagerHistoryCarts/></LayoutAdmin>},
+    {path:"/managerdetailcart/:date",element:<LayoutAdmin><ManagerDetailCart/></LayoutAdmin>},
     {
       path: "/posts/:id",
       element: isAuth ? <LayoutAdmin><PostDetailAd /></LayoutAdmin> : <Navigate to="/signIn" />,

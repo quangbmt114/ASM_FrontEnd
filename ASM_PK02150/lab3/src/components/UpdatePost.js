@@ -20,9 +20,12 @@ const UpdatePost = ({ isShow, handleClose, props, onReload }) => {
     const data = await axios.put(process.env.REACT_APP_API + `/posts/${id}`, post);
     console.log(post);
     if (data) {
-      alert("Update Success");
-      handleClose()
+       setPost(data)
+       handleClose()
       onReload(id)
+      alert("Update Success");
+      
+     
       
     }
   };

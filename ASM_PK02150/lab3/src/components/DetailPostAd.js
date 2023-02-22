@@ -56,6 +56,7 @@ const PostDetailAd = (props) => {
               Edit</Button>
               <UpdatePost
                 isShow={isOpen}
+                
                 handleClose={() => setIsOpen(false)}
               />
             </div>

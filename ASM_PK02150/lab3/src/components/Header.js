@@ -10,24 +10,26 @@ import {
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { Fragment } from "react";
+import { Fragment ,useEffect,useState} from "react";
 const Header = ({ auth }) => {
+const [count,setCount]=useState(0)
   const renderLogout = () => {
     return (
       <div className="buttons">
-        <a
-          href="/"
+        <Link
+          to="/"
           onClick={logOut}
           style={{ margin: 10, textDecoration: "none", color: "#333333" }}
         >
           <FontAwesomeIcon icon={faSignOut} className="me-1" />
           Sign Out
-        </a>
+        </Link>
       </div>
     );
   };
   const logOut = () => {
     localStorage.removeItem("user");
+    setCount(1)
   };
 
   const renderAuthorize = () => {
@@ -54,6 +56,7 @@ const Header = ({ auth }) => {
   const renderCart = () => {
     return (
       <div className="buttons">
+      <Link to="/historycarts">History Carts</Link>
         <Link
           to="/cart"
           style={{ textDecoration: "none", color: "#333333", margin: 10 }}

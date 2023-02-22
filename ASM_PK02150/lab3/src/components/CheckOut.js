@@ -2,20 +2,38 @@ import React, { useState, useContext } from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import CartList from "./CartList";
 import { CartContext } from "../context";
+import axios from "axios";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Checkout = () => {
+  const navigate = useNavigate();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
   const [phone, setPhone] = useState("");
   const [note, setNote] = useState("");
-
+ const dataUser = JSON.parse(localStorage.getItem("user"))
   // eslint-disable-next-line no-unused-vars
   const { cartReducer: carts, cartDispatch: dispatch } =
     useContext(CartContext);
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async(e) => {
     e.preventDefault();
+      const data = await axios.post("http://localhost:3000/historyUser",{
+        name:name,
+        email:email,
+        address:address,
+        phone:phone,
+        notes:note,
+        date:new Date() ,
+        carts:carts,
+        status :true
+      })
+      alert("cập nhật thông tin đơn hàng thành công!!")
+      localStorage.removeItem(dataUser.id)
+      carts.items =[]
+      navigate("/")
+      console.log(data);
     // Handle form submission logic here
   };
 

@@ -15,15 +15,24 @@ const HeaderAdmin = ({ auth }) => {
   const renderLogout = () => {
     return (
       <div className="buttons">
-     <div className="managePost"><Link to="/adminApp"><img  src={ManagePost}/> Manage Post</Link></div>
-        <a
-          href="/"
+        <div className="managePost">
+          <Link to="/adminApp">
+            <img src={ManagePost} />
+            Manage Post</Link>
+        </div>
+        <div className="managerhistorycarts" >
+          <Link to="/managerhistorycarts">
+            <img src={ManagePost} />
+            Manager History Carts</Link>
+        </div>
+        <Link
+          to="/"
           onClick={logOut}
           style={{ margin: 10, textDecoration: "none", color: "#333333" }}
         >
           <FontAwesomeIcon icon={faSignOut} className="me-1" />
           Sign Out
-        </a>
+        </Link>
       </div>
     );
   };
